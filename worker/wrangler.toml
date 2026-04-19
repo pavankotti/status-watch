@@ -1,0 +1,12 @@
+name = "status-watch-worker"
+main = "src/index.js"
+compatibility_date = "2024-04-01"
+compatibility_flags = ["nodejs_compat"]
+
+[triggers]
+crons = ["* * * * *"]
+
+# Native Cloudflare Database Binding
+[[kv_namespaces]]
+binding = "STATUS_WATCH_DB"
+id = "90ae34152d2249cda3e21a3ace6025c0"

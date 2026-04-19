@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>StatusWatch / Intercept</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700&family=DM+Mono&display=swap" rel="stylesheet">
+  <style>
+    :root { --cream: #F4EFE4; --black: #141210; --red: #D93025; --serif: 'Playfair Display', serif; --mono: 'DM Mono', monospace; }
+    body { background: var(--cream); color: var(--black); font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+    
+    .card { background: var(--cream); border: 2px solid var(--black); padding: 40px; width: 450px; box-shadow: 12px 12px 0px var(--black); }
+    .eyebrow { font-family: var(--mono); font-size: 11px; margin-bottom: 15px; color: var(--red); display: flex; align-items: center; gap: 8px; text-transform: uppercase; }
+    .dot { width: 8px; height: 8px; background: var(--red); border-radius: 50%; }
+    h1 { font-family: var(--serif); font-size: 32px; margin: 0 0 10px 0; line-height: 1.1; }
+    p { font-size: 14px; color: #555; line-height: 1.5; margin-bottom: 25px; word-break: break-all; }
+    
+    input { width: 100%; padding: 12px; border: 2px solid var(--black); margin-bottom: 15px; font-family: var(--mono); font-size: 12px; box-sizing: border-box; background: transparent; outline: none; transition: border-color 0.2s; }
+    input:focus { border-color: var(--red); }
+    
+    button { width: 100%; background: var(--black); color: var(--cream); border: none; padding: 14px; cursor: pointer; font-family: var(--mono); font-weight: bold; font-size: 12px; letter-spacing: 0.1em; transition: background 0.2s; }
+    button:hover { background: var(--red); }
+    button:disabled { background: #555; cursor: not-allowed; }
+    
+    .success-state { display: none; text-align: center; }
+  </style>
+</head>
+<body>
+  <div class="card" id="main-card">
+    <div id="form-container">
+      <div class="eyebrow"><div class="dot"></div> Intercepted: <span id="status-code">500</span></div>
+      <h1>Server Down.</h1>
+      <p>We caught a failure at <strong id="target-url">this site</strong>. Drop your email and we'll ping you the second it recovers.</p>
+      <input type="email" id="contact" placeholder="your@email.com" />
+      <button id="monitor-btn">START VIGIL</button>
+    </div>
+    
+    <div id="success-msg" class="success-state">
+      <div class="eyebrow" style="justify-content: center; color: var(--black);"><div class="dot" style="background: var(--black);"></div> SYSTEM ACTIVE</div>
+      <h1 style="font-style: italic;">Watching.</h1>
+      <p style="margin-bottom: 0;">You can safely close this tab. The Cloudflare Worker will email you when the server responds with a 200 OK.</p>
+    </div>
+  </div>
+  <script src="monitor.js"></script>
+</body>
+</html>

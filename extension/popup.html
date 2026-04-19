@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700&family=DM+Mono&display=swap" rel="stylesheet">
+  <style>
+    :root { --cream: #F4EFE4; --black: #141210; --red: #D93025; --serif: 'Playfair Display', serif; --mono: 'DM Mono', monospace; }
+    body { background: var(--cream); color: var(--black); width: 280px; padding: 20px; font-family: sans-serif; margin: 0; border: 1px solid var(--black); }
+    .logo { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; display: flex; align-items: center; gap: 6px; margin-bottom: 15px; }
+    .dot { width: 6px; height: 6px; background: var(--red); border-radius: 50%; }
+    h1 { font-family: var(--serif); font-style: italic; font-size: 22px; margin: 0 0 10px 0; line-height: 1; }
+    p { font-size: 12px; color: #666; line-height: 1.4; margin-bottom: 15px; }
+    .status-tag { display: inline-block; font-family: var(--mono); font-size: 9px; background: var(--black); color: var(--cream); padding: 4px 8px; text-transform: uppercase; }
+  </style>
+</head>
+<body>
+  <div class="logo"><div class="dot"></div> STATUSWATCH / ACTIVE</div>
+  <h1>Silent Vigil.</h1>
+  <p>StatusWatch is monitoring your tabs. If a server throws a 5xx error, we'll intercept it automatically.</p>
+  <div class="status-tag">Engine Running</div>
+</body>
+</html>

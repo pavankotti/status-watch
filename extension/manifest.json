@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Status Watch",
+  "version": "1.0.0",
+  "description": "Automatically monitors servers when they go down and notifies you when they are back.",
+  "permissions": [
+    "webRequest",
+    "storage",
+    "tabs",
+    "scripting"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Status Watch Options",
+    "default_popup": "popup.html"
+  }
+}
